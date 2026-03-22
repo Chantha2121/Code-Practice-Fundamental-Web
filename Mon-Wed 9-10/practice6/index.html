@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <label for="cars">Choose a car:</label>
+    <select name="cars" id="cars" size="4">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+  </div>
+
+  <br><br>
+
+  <!-- Text Area -->
+  <div>
+    <label for="text_area">Text Area</label>
+    <textarea name="message" id="message" rows="4" cols="50">
+  </textarea>
+  </div>
+  <br><br>
+
+  <!-- Button Attributes -->
+  <div>
+    <button type="button" onclick="alert('click me already')">Click Me</button>
+  </div>
+  <br><br>
+
+  <!-- FleidSet and Legend Form -->
+  <div>
+    <form action="">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name"><br><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+  </div>
+
+  <br><br>
+
+  <!-- Data List -->
+  <div>
+    <form action="">
+      <input list="browser">
+      <datalist id="browser">
+        <option value="Edge">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </form>
+  </div>
+
+  <!-- Output Element -->
+  <div>
+    <form action="" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      0
+      <input type="range" name="a" id="a" value="50">
+      100+
+      <input type="number" name="b" id="b" value="50">
+      =
+      <output name="x" for="a b"></output>
+      <br><br>
+      <input type="submit" value="Submit">
+
+
+    </form>
+  </div>
+
+  <!-- Canvas Element -->
+  <div>
+    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;"></canvas>
+  </div>
+
+  <!-- SVG Element -->
+  <div>
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+  </div>
+
+  <!-- Video Element -->
+  <video height="200" width="500" controls>
+    <source src="video.mov" type="video/mp4">
+  </video>
+
+  <!-- Audio Element -->
+  <div>
+    <audio controls>
+      <source src="video.mov" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Youtube Video Embed: -->
+  <div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zRNPHt0dF7E"
+      title="YouTube video player"></iframe>
+  </div>
+
+  <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required><br><br>
+</body>
+
+</html>
