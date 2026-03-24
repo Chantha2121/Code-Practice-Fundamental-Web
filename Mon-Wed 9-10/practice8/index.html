@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* div p {
+      color: red;
+    } */
+
+    /* div~p {
+      color: red;
+    } */
+
+    a:hover {
+      color: red;
+      font-size: 20px;
+    }
+
+    /* a:visited {
+      color: red;
+    } */
+    p::first-line {
+      color: red;
+      font-variant: small-caps;
+    }
+
+    /* a[target="_blank"] {
+      color: red;
+    } */
+
+    [title~="flower"] {
+      color: blue;
+    }
+
+    [class|="top"] {
+      /* direction: rtl; */
+      text-align: center;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>this is paragraph1</p>
+    <p>this is paragraph2</p>
+    <p>this is paragraph3</p>
+    <section>
+      <p>this is paragraph section</p>
+    </section>
+  </div>
+  <p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text.
+    And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more,
+    and more</p>
+
+
+  <!-- Psuedo Class Selector -->
+  <a href="" target="_blank">Link</a>
+  <a href="">Link2</a>
+  <div title="flower">Test</div>
+
+  <div class="top">Div 1</div>
+  <div class="top-2sddsdsd">Div 1</div>
+</body>
+
+</html>
