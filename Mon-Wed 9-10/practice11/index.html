@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 id="h1">This is My Contact Page</h1>
+  <button id="btn">Click Me</button>
+  <script>
+    document.write('<p>Hello, World!</p>');
+    // alert('Welcome to JavaScript practice!');
+    // window.confirm('Do you want to continue?');
+    window.prompt('Please enter your name:');
+  </script>
+
+</body>
+<script>
+  const btn = document.getElementById('btn');
+  const h1 = document.getElementById('h1');
+  btn.addEventListener('click', function () {
+    h1.innerHTML = 'This is My Home Page';
+    h1.style.color = 'red';
+  })
+
+</script>
+
+</html>
