@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  }
+
+  .navbar {
+    padding: 0px 32px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #9549000F;
+    max-height: 80px;
+    align-items: center;
+  }
+
+  .menu-list ul {
+    display: flex;
+    gap: 41px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  li a {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    text-decoration: none;
+    color: #71717A;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 28px 0;
+  }
+
+  li a.active {
+    color: #F4934D;
+    font-weight: 700;
+  }
+
+  li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: 2px;
+    background: #F4934D;
+    border-radius: 99px;
+  }
+
+  .button {
+    padding: 8px 24px;
+    background-color: #F4934D;
+    font-weight: bold;
+    border-radius: 12px;
+    color: white;
+  }
+
+  .banner {
+    width: 100%;
+    height: 600px;
+    background-image: url('./image/banner.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .draw-section {
+    display: flex;
+    gap: 60px;
+    padding: 80px 32px;
+    align-items: center;
+  }
+
+  .draw-section .text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1B1B1B;
+    line-height: 48px;
+  }
+
+  .draw-section .text p {
+    font-size: 18px;
+    color: #554338;
+    margin-top: 16px;
+    line-height: 29px;
+  }
+
+  .btn-draw {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    padding: 16px 32px;
+    background-color: #785900;
+    font-size: 16px;
+    border-radius: 9999px;
+    color: white;
+  }
+
+  .last-collection {
+    margin: 0 32px 56px;
+    background: #ececec;
+    border-radius: 2px;
+    padding: 44px 22px 34px;
+    overflow: hidden;
+  }
+
+  .collection-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .collection-head h2 {
+    font-size: 44px;
+    line-height: 1.1;
+    color: #1f1f1f;
+    font-weight: 700;
+  }
+
+  .collection-head p {
+    margin-top: 8px;
+    color: #5f5f5f;
+    font-size: 21px;
+    line-height: 1.45;
+  }
+
+  .collection-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .collection-nav button {
+    border: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    background: #f4f4f4;
+    color: #b1702f;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .collection-row {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .collection-card {
+    background: #f2f2f2;
+    border-radius: 24px;
+    padding: 14px;
+    min-width: 0;
+  }
+
+  .collection-cover {
+    height: 360px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .collection-cover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 78px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+  }
+
+  .badge {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    z-index: 2;
+    background: #f4e8d6;
+    color: #79511e;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+  }
+
+  .cover-caption {
+    position: absolute;
+    left: 12px;
+    bottom: 14px;
+    z-index: 2;
+    color: #fff;
+    font-size: 38px;
+    line-height: 1.02;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .collection-card h3 {
+    margin-top: 16px;
+    font-size: 35px;
+    line-height: 1.1;
+    color: #1f1f1f;
+  }
+
+  .collection-card span {
+    display: block;
+    margin-top: 4px;
+    color: #595959;
+    font-size: 24px;
+  }
+
+  .cover-web {
+    background-image:
+      radial-gradient(circle at 18% 20%, #2d4a7d 0 20%, transparent 21%),
+      radial-gradient(circle at 82% 20%, #2d4a7d 0 20%, transparent 21%),
+      linear-gradient(145deg, #1f2738 0%, #0d1220 60%, #101724 100%);
+  }
+
+  .cover-house {
+    background-image:
+      linear-gradient(180deg, #63a6da 0%, #4f97d2 40%, #5f8a4f 75%, #3c5f2d 100%);
+  }
+
+  .cover-country {
+    background-image:
+      linear-gradient(180deg, #a6d5da 0%, #93cdd5 34%, #7ca867 58%, #466142 100%);
+  }
+
+  .cover-anime {
+    background-image:
+      linear-gradient(160deg, #e39b7f 0%, #de8a6d 48%, #d77362 100%);
+  }
+
+  @media (max-width: 1024px) {
+    .collection-head h2 {
+      font-size: 32px;
+    }
+
+    .collection-head p {
+      font-size: 18px;
+    }
+
+    .collection-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .collection-cover {
+      height: 280px;
+    }
+
+    .cover-caption {
+      font-size: 28px;
+    }
+
+    .collection-card h3 {
+      font-size: 28px;
+    }
+
+    .collection-card span {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .last-collection {
+      margin: 0 16px 40px;
+      padding: 28px 14px 22px;
+    }
+
+    .collection-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .collection-row {
+      grid-template-columns: 1fr;
+    }
+
+    .collection-nav button {
+      width: 46px;
+      height: 46px;
+      font-size: 24px;
+    }
+  }
+</style>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="./image/logo.png" alt="Logo">
+    </div>
+
+    <div class="menu-list">
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">Story Book</a></li>
+        <li><a href="#">Drawing Book</a></li>
+        <li><a href="#">Test</a></li>
+      </ul>
+    </div>
+
+    <div class="button">
+      My Library
+    </div>
+  </div>
+  <div class="banner"></div>
+
+  <div class="draw-section">
+    <div class="image">
+      <img src="./image/card.png" alt="">
+    </div>
+    <div class="text">
+      <h1>Discover Drawing Book</h1>
+      <p>Step into our curated atelier. Our 'Drawing Book' series guides
+        children through foundational techniques using organic brushes
+        and vibrant palettes that mimic real-world mediums.</p>
+
+      <div class="btn-draw">Open Drawing Book <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z" fill="white" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="last-collection">
+    <div class="collection-head">
+      <div>
+        <h2>Our Latest Collections</h2>
+        <p>Hand-picked interactive books for your next masterpiece.</p>
+      </div>
+
+      <div class="collection-nav">
+        <button type="button" aria-label="Previous">&#8249;</button>
+        <button type="button" aria-label="Next">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="collection-row">
+      <article class="collection-card">
+        <div class="collection-cover cover-web">
+          <span class="badge">BEGINNER</span>
+          <p class="cover-caption">Web<br>Development</p>
+        </div>
+        <h3>Cartoon Girl</h3>
+        <span>12 Lessons</span>
+      </article>
+
+      <article class="collection-card">
+        <div class="collection-cover cover-house">
+          <span class="badge">INTERMEDIATE</span>
+          <p class="cover-caption">Safe work</p>
+        </div>
+        <h3>House</h3>
+        <span>8 Lessons</span>
+      </article>
+
+      <article class="collection-card">
+        <div class="collection-cover cover-country">
+          <span class="badge">ADVANCED</span>
+        </div>
+        <h3>Country Side</h3>
+        <span>15 Lessons</span>
+      </article>
+
+      <article class="collection-card">
+        <div class="collection-cover cover-anime"></div>
+        <h3>Anime Girl</h3>
+        <span>20 Lessons</span>
+      </article>
+    </div>
+  </div>
+</body>
+
+</html>
